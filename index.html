@@ -10,11 +10,13 @@
 <body>
     <div id="page1">
         <div class="stretch-image-fit">
+            <!--Not the best practice but to ensure the image is covering the page correctly (background: cover doesn't position well due to image shape.)-->
             <img src="./assets/img/bg.gif" alt="" srcset="">
         </div>
         <div class="mask"></div>
         <div class="container">
             <div class="card">
+                <!--Catch point to display feedback for sound variable-->
                 <p class="audio-status">Audio <strong id="state">ON</strong></p>
                 <!--Main Intro Card-->
                 <div id="intro">
@@ -24,6 +26,7 @@
                     <br>
                     <p class="small"><span class="gold">*</span> <u>Audio Should Only Play If Headphones Are Used.</u></p>
                 </div>
+                <!--Hook for lyrics. Display Verse By Verse (script file - line 102)-->
                 <h3 id="song"></h3>
                 <div id="options" style="display: flex; justify-content: center; align-items:center;">
                     <button id="text">Text</button>
