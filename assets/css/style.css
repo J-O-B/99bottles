@@ -31,6 +31,7 @@ body{
     z-index: 3;
 }
 .card{
+    position: relative;
     background-color: rgba(51,51,51,0.6);
     border-radius: 30px;
     position: absolute;
@@ -50,13 +51,16 @@ body{
     padding-bottom:20px;
 }
 #options{
-    position: absolute;
+    position: relative;
     bottom:20px;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
+    display: flex;  
+    flex-wrap: wrap;
 }
 button{
+    margin-bottom: 10px;
     margin-left: 10px;
     margin-right: 10px;
     border: none;
@@ -64,6 +68,10 @@ button{
     padding: 5px 20px;
     background: linear-gradient(135deg, purple, pink);
     cursor: pointer;
+    color: white;
+    font-size: 14px;
+    font-style: italic;
+    letter-spacing: 1.5px;
 }
 #page1{
     position: relative;
@@ -96,4 +104,15 @@ button{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.gold{
+    color: gold;
+}
+.audio-status{
+    position: absolute;
+    top:10px;
+    left: 10px;
+    color: green;
+    font-size: small;
+    font-style: italic;
 }

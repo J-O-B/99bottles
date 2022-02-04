@@ -16,6 +16,20 @@ document.getElementById('page2').style.display = 'none';
 // Mute logic
 let sound = true;
 
+// In case of mute button
+let soundButton = document.getElementById('sound');
+let audioStatus = document.getElementById('state');
+soundButton.addEventListener('click', function(event){
+    if (sound == true){
+        sound = false;
+        audioStatus.innerText = 'OFF';
+    }else{
+        sound = true;
+        audioStatus.innerText = 'ON';
+    }
+});
+
+
 let backButton = document.getElementById('back');
 backButton.addEventListener('click', function(event){
     document.getElementById('page2').style.display = 'none';
@@ -64,27 +78,36 @@ function getLyrics(){
     };
 
     // Speech Synthesis
-    function sing(text, sound){
+    function sing(text, audio){
 
-        // In case of mute button
-        let soundButton = document.getElementById('sound');
-        soundButton.addEventListener('click', function(event){
-            sound = false;
-        });
-
+        // Speech synthesis initialization
         let message = new SpeechSynthesisUtterance(text[0]);
         let voices = window.speechSynthesis.getVoices()
         
-        message.voice = voices[3];
-        message.pitch = 1.5;
-        message.rate = 2;
+        // Add Multiple Voices
+        if (text.length % 3){
+            message.voice = voices[5];
+            message.pitch = 0.3;
+            message.rate = 1.9;
+        }else if (text.length % 2){
+            message.voice = voices[2];
+            message.pitch = 0.1;
+            message.rate = 1.9;
+        }else{
+            message.voice = voices[7];
+            message.pitch = 1.7;
+            message.rate = 1.9;
+        }
         
+        // Format lyrics for display to dom.
         let lyric = text[0].split('.');
         let htmlLyrics = ''
         for (i=0; i< lyric.length; i++){
             htmlLyrics = htmlLyrics + lyric[i] + '<br><br>';
         }
         document.getElementById('song').innerHTML = htmlLyrics;
+
+        // Logic for sound & slice one item our of the lyrics array
         if (sound == true){
             window.speechSynthesis.speak(message);
             message.onend = function(event){

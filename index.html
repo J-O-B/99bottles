@@ -15,18 +15,22 @@
         <div class="mask"></div>
         <div class="container">
             <div class="card">
+                <p class="audio-status">Audio <strong id="state">ON</strong></p>
                 <!--Main Intro Card-->
                 <div id="intro">
                     <h1>99 Bottles Of <span class="fuzz">Beer</span> On The Wall</h1>
                     <h2>Would You Like To View Lyrics Or Hear Lyrics?</h2>
-                    <p><em>Please note in Internet Explorer, Web View(Android) and Opera(Android) this app won't have sound.</em></p>
+                    <p class="small"><span class="gold">*</span> Please note audio in Internet Explorer, Web View(Android) and Opera(Android) browsers is not supported.</p>
+                    <br>
+                    <p class="small"><span class="gold">*</span> <u>Audio Should Only Play If Headphones Are Used.</u></p>
                 </div>
                 <h3 id="song"></h3>
                 <div id="options" style="display: flex; justify-content: center; align-items:center;">
-                    <button id="text">Text Lyrics</button>
-                    <button id="sing">Sing (badly) Lyrics</button>
-                    <button id="sound">Sound</button>
+                    <button id="text">Text</button>
+                    <button id="sing">Sing</button>
+                    <br>
                 </div>
+                <button id="sound">Toggle Sound</button>
             </div>
         </div>
     </div>
