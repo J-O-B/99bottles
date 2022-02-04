@@ -8,8 +8,41 @@
     <title>99 Bottles</title>
 </head>
 <body>
-    initial commit boilerplate
+    <div id="page1">
+        <div class="stretch-image-fit">
+            <img src="./assets/img/bg.gif" alt="" srcset="">
+        </div>
+        <div class="mask"></div>
+        <div class="container">
+            <div class="card">
+                <!--Main Intro Card-->
+                <div id="intro">
+                    <h1>99 Bottles Of <span class="fuzz">Beer</span> On The Wall</h1>
+                    <h2>Would You Like To View Lyrics Or Hear Lyrics?</h2>
+                    <p><em>Please note in Internet Explorer, Web View(Android) and Opera(Android) this app won't have sound.</em></p>
+                </div>
+                <h3 id="song"></h3>
+                <div id="options" style="display: flex; justify-content: center; align-items:center;">
+                    <button id="text">Text Lyrics</button>
+                    <button id="sing">Sing (badly) Lyrics</button>
+                    <button id="sound">Sound</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Basic Page To Display Lyrics-->
+    <div id="page2">
+        <div class="navigation">
+            <button id="back">Back To Main Page</button>
+        </div>
+        <div class="lyrics">
+            <p id="text-lyrics">
+                <!--Text Lyrics Placed Here-->
+            </p>
+        </div>
+    </div>
 
+    <!--Local Script-->
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
